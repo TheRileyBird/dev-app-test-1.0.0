@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        <?=$title; ?>
+    </title>
+</head>
+
+<body>
+    <h1><?=$title; ?></h1>
+<?php include __DIR__ . '/nav.phtml'; ?>
+ <!--
+    Task 2:
+    Add a column in the table for the user's email address.
+//-->
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Email</th>
+    </tr>
+<?php foreach ($users as $user): ?>
+    <tr>
+        <td><?=$user['id']; ?></td>
+        <!-- Displays User Info from Task 3 -->
+        <td><a href="/active-users/<?=$user['id']; ?>"><?=$user['username']; ?></a></td>
+        <td><a href="mailto:<?=$user['email']; ?>"><?=$user['email']; ?></a></td>
+    </tr>
+<?php endforeach; ?>
+</table>
+
+</body>
+
+</html>
